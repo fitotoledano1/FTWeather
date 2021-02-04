@@ -27,8 +27,8 @@ struct MainCityView: View {
                         .resizable()
                         .frame(width: 75, height: 75, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                         .foregroundColor(.white)
-                    Text(String(format: "%.1f", viewModel.temperature))
-                        .font(.largeTitle)
+                    Text("\(String(format: "%.1f", viewModel.temperature)) ºC")
+                        .font(.system(size: 72))
                         .bold()
                         .foregroundColor(.white)
                         
