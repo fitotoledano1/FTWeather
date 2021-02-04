@@ -1,4 +1,4 @@
 .DS_Store
 
-ftweather/API.swift
+ftweather/APIConstants.swift
 ftweather/Models/MockData.swift
