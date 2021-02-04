@@ -8,20 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		B0F51A4425CC75AF0056C221 /* FTWeatherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F51A4325CC75AF0056C221 /* FTWeatherApp.swift */; };
-		B0F51A4625CC75AF0056C221 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F51A4525CC75AF0056C221 /* ContentView.swift */; };
+		B0F51A4625CC75AF0056C221 /* MainCityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F51A4525CC75AF0056C221 /* MainCityView.swift */; };
 		B0F51A4825CC75B00056C221 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0F51A4725CC75B00056C221 /* Assets.xcassets */; };
 		B0F51A4B25CC75B00056C221 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0F51A4A25CC75B00056C221 /* Preview Assets.xcassets */; };
 		B0F51A5425CC779A0056C221 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F51A5325CC779A0056C221 /* BackgroundView.swift */; };
+		B0F51A5B25CC7AAA0056C221 /* MainCityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F51A5A25CC7AAA0056C221 /* MainCityViewModel.swift */; };
+		B0F51A5E25CC7B7B0056C221 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F51A5D25CC7B7B0056C221 /* API.swift */; };
+		B0F51A6325CC80100056C221 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F51A6225CC80100056C221 /* City.swift */; };
+		B0F51A6825CCA0880056C221 /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F51A6725CCA0880056C221 /* APIResponse.swift */; };
+		B0F51A6B25CCA09A0056C221 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F51A6A25CCA09A0056C221 /* MockData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B0F51A4025CC75AF0056C221 /* FTWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FTWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0F51A4325CC75AF0056C221 /* FTWeatherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTWeatherApp.swift; sourceTree = "<group>"; };
-		B0F51A4525CC75AF0056C221 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B0F51A4525CC75AF0056C221 /* MainCityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCityView.swift; sourceTree = "<group>"; };
 		B0F51A4725CC75B00056C221 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B0F51A4A25CC75B00056C221 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B0F51A4C25CC75B00056C221 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0F51A5325CC779A0056C221 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
+		B0F51A5A25CC7AAA0056C221 /* MainCityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCityViewModel.swift; sourceTree = "<group>"; };
+		B0F51A5D25CC7B7B0056C221 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		B0F51A6225CC80100056C221 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		B0F51A6725CCA0880056C221 /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
+		B0F51A6A25CCA09A0056C221 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,12 +64,13 @@
 		B0F51A4225CC75AF0056C221 /* FTWeather */ = {
 			isa = PBXGroup;
 			children = (
-				B0F51A4325CC75AF0056C221 /* FTWeatherApp.swift */,
-				B0F51A4525CC75AF0056C221 /* ContentView.swift */,
-				B0F51A5325CC779A0056C221 /* BackgroundView.swift */,
-				B0F51A4725CC75B00056C221 /* Assets.xcassets */,
 				B0F51A4C25CC75B00056C221 /* Info.plist */,
+				B0F51A5D25CC7B7B0056C221 /* API.swift */,
+				B0F51A4325CC75AF0056C221 /* FTWeatherApp.swift */,
+				B0F51A4725CC75B00056C221 /* Assets.xcassets */,
+				B0F51A6125CC800B0056C221 /* Models */,
 				B0F51A4925CC75B00056C221 /* Preview Content */,
+				B0F51A5625CC787E0056C221 /* Views */,
 			);
 			path = FTWeather;
 			sourceTree = "<group>";
@@ -70,6 +81,26 @@
 				B0F51A4A25CC75B00056C221 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B0F51A5625CC787E0056C221 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B0F51A4525CC75AF0056C221 /* MainCityView.swift */,
+				B0F51A5A25CC7AAA0056C221 /* MainCityViewModel.swift */,
+				B0F51A5325CC779A0056C221 /* BackgroundView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B0F51A6125CC800B0056C221 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B0F51A6225CC80100056C221 /* City.swift */,
+				B0F51A6725CCA0880056C221 /* APIResponse.swift */,
+				B0F51A6A25CCA09A0056C221 /* MockData.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,9 +172,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0F51A6825CCA0880056C221 /* APIResponse.swift in Sources */,
+				B0F51A5B25CC7AAA0056C221 /* MainCityViewModel.swift in Sources */,
 				B0F51A5425CC779A0056C221 /* BackgroundView.swift in Sources */,
-				B0F51A4625CC75AF0056C221 /* ContentView.swift in Sources */,
+				B0F51A6325CC80100056C221 /* City.swift in Sources */,
+				B0F51A4625CC75AF0056C221 /* MainCityView.swift in Sources */,
+				B0F51A6B25CCA09A0056C221 /* MockData.swift in Sources */,
 				B0F51A4425CC75AF0056C221 /* FTWeatherApp.swift in Sources */,
+				B0F51A5E25CC7B7B0056C221 /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
