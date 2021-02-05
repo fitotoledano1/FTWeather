@@ -23,14 +23,8 @@ struct MainCityView: View {
                     .padding()
                 
                 HStack(spacing: 20) {
-                    Image(systemName: "sun.max")
-                        .resizable()
-                        .frame(width: 75, height: 75, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                        .foregroundColor(.white)
-                    Text("\(String(format: "%.1f", viewModel.temperature)) ºC")
-                        .font(.system(size: 72))
-                        .bold()
-                        .foregroundColor(.white)
+                    ConditionsView(conditionCode: $viewModel.condition)
+                    TemperatureView(temperature: $viewModel.temperature)
                 }
                 
                 Spacer()

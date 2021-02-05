@@ -7,18 +7,17 @@
 
 import Foundation
 
-enum FTWError: String, Error {
-    case invalidUrl = ""
-}
-
 final class MainCityViewModel: ObservableObject {
     
+    @Published var isLoading: Bool = false
+    
     @Published var temperature: Double = 0
+    @Published var condition: String = ""
+    
+    // For later use.
     @Published var city: String?
     @Published var state: String?
     @Published var country: String?
-    
-    @Published var isLoading: Bool = false
     
     func stopLoading() {
         DispatchQueue.main.async { self.isLoading = false }
@@ -32,21 +31,24 @@ final class MainCityViewModel: ObservableObject {
             return
         }
         
-        let dataTask = URLSession.shared.dataTask(with: url) { (data, response, error) in
+        let dataTask = URLSession.shared.dataTask(with: url) { [weak self] (data, response, error) in
+            
+            guard let self = self else { return }
+            
             if error == nil {
                 
                 guard let response = response as? HTTPURLResponse else {
+                    self.stopLoading()
                     return
                 }
                 
                 switch response.statusCode {
                 case 200:
-                    print("OK")
+                    print("OK Response Status: 200")
                 case 401:
                     print("Invalid API key")
                     self.stopLoading()
                     return
-                    
                 default:
                     print("Unable to complete")
                     self.stopLoading()
@@ -60,16 +62,18 @@ final class MainCityViewModel: ObservableObject {
                 do {
                     let decoder = JSONDecoder()
                     decoder.keyDecodingStrategy = .convertFromSnakeCase
-                    let weather = try decoder.decode(APIResponse.self, from: data)
+                    let apiResponse = try decoder.decode(APIResponse.self, from: data)
                     
-                    let temperature = weather.main["temp"]!
+                    let temperature = apiResponse.main.temp
+                    let condition = apiResponse.weather[0].main
                     
                     DispatchQueue.main.async {
                         self.city = "Brussels, Belgium"
                         self.temperature = temperature
+                        self.condition = condition
                     }
-                } catch {
-                    
+                } catch let error {
+                    print("There was an error decoding JSON data...", error.localizedDescription)
                 }
                 
             } else {

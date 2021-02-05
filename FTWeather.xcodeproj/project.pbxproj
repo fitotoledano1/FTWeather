@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B0938F7125CCCDE50064D393 /* ConditionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0938F7025CCCDE50064D393 /* ConditionsView.swift */; };
+		B0938F7525CCCE320064D393 /* FTWError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0938F7425CCCE320064D393 /* FTWError.swift */; };
+		B0938F7925CCCE610064D393 /* TemperatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0938F7825CCCE610064D393 /* TemperatureView.swift */; };
 		B0F51A4425CC75AF0056C221 /* FTWeatherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F51A4325CC75AF0056C221 /* FTWeatherApp.swift */; };
 		B0F51A4625CC75AF0056C221 /* MainCityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F51A4525CC75AF0056C221 /* MainCityView.swift */; };
 		B0F51A4825CC75B00056C221 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0F51A4725CC75B00056C221 /* Assets.xcassets */; };
@@ -20,6 +23,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B0938F7025CCCDE50064D393 /* ConditionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionsView.swift; sourceTree = "<group>"; };
+		B0938F7425CCCE320064D393 /* FTWError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTWError.swift; sourceTree = "<group>"; };
+		B0938F7825CCCE610064D393 /* TemperatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureView.swift; sourceTree = "<group>"; };
 		B0F51A4025CC75AF0056C221 /* FTWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FTWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0F51A4325CC75AF0056C221 /* FTWeatherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTWeatherApp.swift; sourceTree = "<group>"; };
 		B0F51A4525CC75AF0056C221 /* MainCityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCityView.swift; sourceTree = "<group>"; };
@@ -45,6 +51,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B0938F7325CCCE250064D393 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B0938F7425CCCE320064D393 /* FTWError.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		B0F51A3725CC75AF0056C221 = {
 			isa = PBXGroup;
 			children = (
@@ -68,6 +82,7 @@
 				B0F51A5D25CC7B7B0056C221 /* APIConstants.swift */,
 				B0F51A4325CC75AF0056C221 /* FTWeatherApp.swift */,
 				B0F51A4725CC75B00056C221 /* Assets.xcassets */,
+				B0938F7325CCCE250064D393 /* Helpers */,
 				B0F51A6125CC800B0056C221 /* Models */,
 				B0F51A4925CC75B00056C221 /* Preview Content */,
 				B0F51A5625CC787E0056C221 /* Views */,
@@ -89,6 +104,8 @@
 				B0F51A4525CC75AF0056C221 /* MainCityView.swift */,
 				B0F51A5A25CC7AAA0056C221 /* MainCityViewModel.swift */,
 				B0F51A5325CC779A0056C221 /* BackgroundView.swift */,
+				B0938F7025CCCDE50064D393 /* ConditionsView.swift */,
+				B0938F7825CCCE610064D393 /* TemperatureView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -172,11 +189,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0938F7925CCCE610064D393 /* TemperatureView.swift in Sources */,
 				B0F51A6825CCA0880056C221 /* APIResponse.swift in Sources */,
 				B0F51A5B25CC7AAA0056C221 /* MainCityViewModel.swift in Sources */,
 				B0F51A5425CC779A0056C221 /* BackgroundView.swift in Sources */,
 				B0F51A6325CC80100056C221 /* City.swift in Sources */,
+				B0938F7525CCCE320064D393 /* FTWError.swift in Sources */,
 				B0F51A4625CC75AF0056C221 /* MainCityView.swift in Sources */,
+				B0938F7125CCCDE50064D393 /* ConditionsView.swift in Sources */,
 				B0F51A6B25CCA09A0056C221 /* MockData.swift in Sources */,
 				B0F51A4425CC75AF0056C221 /* FTWeatherApp.swift in Sources */,
 				B0F51A5E25CC7B7B0056C221 /* APIConstants.swift in Sources */,
