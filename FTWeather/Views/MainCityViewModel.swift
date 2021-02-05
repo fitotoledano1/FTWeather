@@ -7,6 +7,10 @@
 
 import Foundation
 
+enum FTWError: String, Error {
+    case invalidUrl = ""
+}
+
 final class MainCityViewModel: ObservableObject {
     
     @Published var temperature: Double = 0
@@ -15,6 +19,10 @@ final class MainCityViewModel: ObservableObject {
     @Published var country: String?
     
     @Published var isLoading: Bool = false
+    
+    func stopLoading() {
+        DispatchQueue.main.async { self.isLoading = false }
+    }
         
     func fetchMainCityWeather() {
         
@@ -26,7 +34,22 @@ final class MainCityViewModel: ObservableObject {
         
         let dataTask = URLSession.shared.dataTask(with: url) { (data, response, error) in
             if error == nil {
-                guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+                
+                guard let response = response as? HTTPURLResponse else {
+                    return
+                }
+                
+                switch response.statusCode {
+                case 200:
+                    print("OK")
+                case 401:
+                    print("Invalid API key")
+                    self.stopLoading()
+                    return
+                    
+                default:
+                    print("Unable to complete")
+                    self.stopLoading()
                     return
                 }
                 

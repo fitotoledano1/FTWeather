@@ -31,13 +31,9 @@ struct MainCityView: View {
                         .font(.system(size: 72))
                         .bold()
                         .foregroundColor(.white)
-                        
                 }
                 
                 Spacer()
-                Spacer()
-                
-                
             }
             .padding()
         }.onAppear {
